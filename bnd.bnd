@@ -1,4 +1,4 @@
 Bundle-Name: impersonation-cpanel
 Bundle-SymbolicName: net.carlosduran.liferay.impersonation
-Bundle-Version: 1.0.0-SNAPHOT
+Bundle-Version: 1.0.0-SNAPSHOT
 Export-Package: net.carlosduran.liferay.impersonation.constants
