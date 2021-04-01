@@ -21,12 +21,10 @@ List<ImpersonationRegistry> impersonations = (List<ImpersonationRegistry>)render
 		        	<fmt:formatDate type = "both" value = "${ reg.operationDate }" />
 		        </liferay-ui:search-container-column-text>
 		        <liferay-ui:search-container-column-text name="col.result">
-			    	<c:choose>
-			    		<c:when test="${ reg.operationResult eq 1 }">SUPLANTADO</c:when>
-			    		<c:when test="${ reg.operationResult eq 2 }">NO PERMITIDO</c:when>
-			    		<c:when test="${ reg.operationResult eq 3 }">USUARIO INEXISTENTE</c:when>
-			    		<c:otherwise></c:otherwise>
-			    	</c:choose>		    
+		            <span class="text-uppercase">
+		                <liferay-ui:message key="result.${ operationResults[reg.operationResult - 1] }" />
+		            </span>
+
 			    </liferay-ui:search-container-column-text>
 		    </liferay-ui:search-container-row>		    
 		    <liferay-ui:search-iterator  markupView="lexicon" />

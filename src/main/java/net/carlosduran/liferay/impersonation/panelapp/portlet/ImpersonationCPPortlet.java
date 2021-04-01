@@ -48,9 +48,12 @@ public class ImpersonationCPPortlet extends MVCPortlet {
 	public void doView(RenderRequest renderRequest, RenderResponse renderResponse)
 			throws IOException, PortletException {
 				
+		String[] operationResults = {"impersonated", "denied", "not-found"};
+
 		renderRequest.setAttribute(ImpersonationCPPortletKeys.ATTR_IMPERSONATIONS,
 		ImpersonationRegistryLocalServiceUtil.getImpersonationRegistries(0,
 				ImpersonationRegistryLocalServiceUtil.getImpersonationRegistriesCount()));
+		renderRequest.setAttribute("operationResults", operationResults);
 		
 		super.doView(renderRequest, renderResponse);
 	}
