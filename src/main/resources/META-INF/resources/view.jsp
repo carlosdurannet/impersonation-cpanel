@@ -10,7 +10,8 @@ List<ImpersonationRegistry> impersonations = (List<ImpersonationRegistry>)render
 %>
 
 <div class="m-4">
-	<h2><liferay-ui:message key="impersonations-registry"></liferay-ui:message></h2>
+    <div class="container">
+	<h2 class="mb-4"><liferay-ui:message key="impersonations-registry"></liferay-ui:message></h2>
 	<div id="sc-main">
 		<liferay-ui:search-container delta="20" emptyResultsMessage="no-entries-to-list" iteratorURL="<%=iteratorURL%>" total="<%= impersonations.size() %>">
 		    <liferay-ui:search-container-results  results="<%= ListUtil.subList(impersonations, searchContainer.getStart(), searchContainer.getEnd()) %>" />
@@ -21,20 +22,16 @@ List<ImpersonationRegistry> impersonations = (List<ImpersonationRegistry>)render
 		        	<fmt:formatDate type = "both" value = "${ reg.operationDate }" />
 		        </liferay-ui:search-container-column-text>
 		        <liferay-ui:search-container-column-text name="col.result">
-			    	<c:choose>
-			    		<c:when test="${ reg.operationResult eq 1 }">SUPLANTADO</c:when>
-			    		<c:when test="${ reg.operationResult eq 2 }">NO PERMITIDO</c:when>
-			    		<c:when test="${ reg.operationResult eq 3 }">USUARIO INEXISTENTE</c:when>
-			    		<c:otherwise></c:otherwise>
-			    	</c:choose>		    
+		            <span class="text-uppercase">
+		                <liferay-ui:message key="result.${ operationResults[reg.operationResult - 1] }" />
+		            </span>
+
 			    </liferay-ui:search-container-column-text>
 		    </liferay-ui:search-container-row>		    
 		    <liferay-ui:search-iterator  markupView="lexicon" />
 		</liferay-ui:search-container>
 	</div>
-	
-	
-	
+	</div>
 </div>
 
 
