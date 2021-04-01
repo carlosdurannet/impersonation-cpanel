@@ -8,4 +8,4 @@ This is a Liferay 7 module that adds an option in Control Panel to view the impe
 This module needs the [impersonation-sb module](https://github.com/carlosdurannet/impersonation-sb) previously installed
 
 ## Usage
-Once installed, access to **Control Panel > Users > Tools > Impersonations**.
+Once installed, access to **Control Panel > Impersonations > Impersonations Registry**.

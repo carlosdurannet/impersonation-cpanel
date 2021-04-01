@@ -1,6 +1,6 @@
-package net.carlosduran.liferay.impersonation.application.list;
+package net.carlosduran.liferay.impersonation.panelapp.application.list;
 
-import net.carlosduran.liferay.impersonation.constants.ImpersonationAdminPanelCategoryKeys;
+import net.carlosduran.liferay.impersonation.panelapp.constants.ImpersonationCPPanelCategoryKeys;
 
 import com.liferay.application.list.BasePanelCategory;
 import com.liferay.application.list.PanelCategory;
@@ -14,21 +14,21 @@ import java.util.ResourceBundle;
 import org.osgi.service.component.annotations.Component;
 
 /**
- * @author carlos
+ * @author cadudu
  */
 @Component(
 	immediate = true,
 	property = {
-		"panel.category.key=" + PanelCategoryKeys.CONTROL_PANEL_USERS,
+		"panel.category.key=" + PanelCategoryKeys.CONTROL_PANEL,
 		"panel.category.order:Integer=100"
 	},
 	service = PanelCategory.class
 )
-public class ImpersonationAdminPanelCategory extends BasePanelCategory {
+public class ImpersonationCPPanelCategory extends BasePanelCategory {
 
 	@Override
 	public String getKey() {
-		return ImpersonationAdminPanelCategoryKeys.CONTROL_PANEL_CATEGORY;
+		return ImpersonationCPPanelCategoryKeys.CONTROL_PANEL_CATEGORY;
 	}
 
 	@Override
@@ -36,7 +36,7 @@ public class ImpersonationAdminPanelCategory extends BasePanelCategory {
 		ResourceBundle resourceBundle = ResourceBundleUtil.getBundle(
 			"content.Language", locale, getClass());
 
-		return LanguageUtil.get(resourceBundle, "category.tools.label");
+		return LanguageUtil.get(resourceBundle, "category.custom.label");
 	}
 
 }
